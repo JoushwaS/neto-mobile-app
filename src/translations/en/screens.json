@@ -1,0 +1,75 @@
+{
+  "test": "test en",
+  "error-view": {
+    "maybe-client-issue": "Sorry, it seems like there’s a problem with your internet connection. Please check your connection and try again.",
+    "maybe-server-issue": "It looks like there’s an issue on our end. We apologize for the inconvenience. Please try again later.",
+    "retry": "Retry",
+    "title": "We encountered an unexpected problem"
+  },
+  "secret-config": {
+    "cancel": "Cancel",
+    "labels": {
+      "api-url": "API URL"
+    },
+    "reset": "Reset",
+    "save": "Save and restart",
+    "title": "Secret configuration"
+  }
+  ,"sign-up-screen":{
+    "create-account":"Create An Account",
+    "account-req-info":"Please provide your name, mobile and dob to sign up for this app."
+  }
+,"sign-up":{
+  "create-account":"Create An Account",
+  "full-name":"Full Name",
+  "email":"Enter Email",
+  "phone-number":"Phone Number",
+  "please-provide-info":"  Please provide your name, mobile number and dob to sign up for          this app"
+},
+  "home-screen":{
+
+    "points":"Points",
+    "points-info":"points expiring on ",
+    "points-history-btn":"Point history",
+    "earn-rewards":"Earn Rewards",
+    "redeem-rewards":"Redeem Rewards",
+    "my-cards":"My Cards",
+    "transaction-detail-header":"Transactional details"
+,"loyalty-points":"Loyalty Points",
+    "settings":"Settings",
+    "logout":"Logout"
+    
+  }
+  ,"points-history":{
+    "earned-points":"Earned Points",
+    "points-expiring-on":" points expiring on ",
+    "levels":"Levels",
+    "bronze":"BRONZE",
+    "silver":"SILVER",
+    "gold":"GOLD",
+    "points-history":"Points History"
+  }
+  ,"redeem-points":{
+    "earned-points":"Earned Points",
+    "minimum":"Minimum",
+    "required-redeem-coins":"powerpoint points are required to redeem coins",
+    "redemption-rule":"Redemption Rule",
+    "redeem-history":"Redeem History",
+    "daily-deals":"Daily Deals",
+    "discount-voucher":"discount voucher",
+    "silver-member":"For silver member",
+    "gold-member":"For gold member",
+    "platinum-member":"For platinum member",
+    "valid-until":"Valid Until",
+    "redeem":"Redeem",
+    "hot-deals":"Hot Deals",
+    "offer-details":"Offer Detail",
+    "visit":"Visit",
+    "for-redeem":"for redeem"
+    
+  },
+"cards":{
+  "payment-cards":"Payment Cards",
+  "add-new-card":"Add New Card"
+}  
+}

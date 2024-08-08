@@ -1,0 +1,78 @@
+apply plugin: "com.android.application"
+apply plugin: "org.jetbrains.kotlin.android"
+apply plugin: "com.facebook.react"
+
+apply from: file("../../node_modules/react-native-vector-icons/fonts.gradle")
+apply from: project(':react-native-config').projectDir.getPath() + "/dotenv.gradle"
+project.ext.react = [
+  entryFile: "index.js",
+  enableHermes: false,  // clean and rebuild if changing
+  assetsPath: "src/main/assets"
+]
+
+// Ensure assets folder exists
+if (rootProject.file('src/main/assets').exists() && rootProject.file('src/main/assets').isDirectory()) {
+  android.sourceSets.main.assets.srcDirs += 'src/main/assets'
+}
+react {
+    // Your existing configuration
+}
+
+def enableProguardInReleaseBuilds = true
+def jscFlavor = 'org.webkit:android-jsc:+'
+
+android {
+    ndkVersion rootProject.ext.ndkVersion
+    buildToolsVersion rootProject.ext.buildToolsVersion
+    compileSdk rootProject.ext.compileSdkVersion
+
+    namespace "com.powerpoint"
+    
+    defaultConfig {
+        applicationId "com.powerpoint"
+        minSdkVersion rootProject.ext.minSdkVersion
+        targetSdkVersion rootProject.ext.targetSdkVersion
+        versionCode 1
+        versionName "1.0"
+        resValue "string", "build_config_package", "com.powerpoint"
+        // Ensure assets folder exists
+        sourceSets {
+            main {
+                assets.srcDirs += 'src/main/assets'
+            }
+        }
+    }
+
+    signingConfigs {
+        debug {
+            storeFile file('debug.keystore')
+            storePassword 'android'
+            keyAlias 'androiddebugkey'
+            keyPassword 'android'
+        }
+    }
+    buildTypes {
+        debug {
+            signingConfig signingConfigs.debug
+        }
+        release {
+            signingConfig signingConfigs.debug
+            minifyEnabled enableProguardInReleaseBuilds
+            proguardFiles getDefaultProguardFile("proguard-android.txt"), "proguard-rules.pro"
+        }
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: "src/main/assets/fonts", include: ["*.ttf"])
+
+    implementation("com.facebook.react:react-android")
+    implementation("com.facebook.react:flipper-integration")
+    if (hermesEnabled.toBoolean()) {
+        implementation("com.facebook.react:hermes-android")
+    } else {
+        implementation jscFlavor
+    }
+}
+
+apply from: file("../../node_modules/@react-native-community/cli-platform-android/native_modules.gradle"); applyNativeModulesAppBuildGradle(project)

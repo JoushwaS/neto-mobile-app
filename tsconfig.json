@@ -1,0 +1,15 @@
+{
+  "extends": "@react-native/typescript-config/tsconfig.json",
+  "compilerOptions": {
+    "jsx": "react",
+    "module": "ES2020",
+    "lib": ["es2020"],
+    "baseUrl": "./",
+    "paths": {
+      "~/*": ["./src/*"]
+    },
+    "typeRoots": ["./node_modules/@types", "./src/types"],
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true
+  }
+}
